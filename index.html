@@ -343,7 +343,7 @@
                 <button class="send-btn" id="sendMessageBtn">📨 Envoyer</button>
             </div>
             <div id="sendConfirmation" class="confirmation-toast"></div>
-            <div class="private-hint">📝 ton message part directement dans mon cœur (et dans ma boîte mail)</div>
+            <div class="private-hint">📝 ton message part directement dans mon cœur</div>
         </div>
         
         <div class="candle" id="wishCandle">
@@ -392,7 +392,6 @@
             return;
         }
         
-        // Désactiver le bouton pendant l'envoi
         sendBtn.disabled = true;
         sendBtn.style.opacity = '0.7';
         confirmationDiv.textContent = "📡 envoi en cours...";
@@ -410,8 +409,7 @@
             
             if (response.ok) {
                 confirmationDiv.textContent = "✨ Message envoyé ! Il est dans mon cœur ✨";
-                textarea.value = ''; // vider le champ
-                // Optionnel : faire disparaître la confirmation après 3 secondes
+                textarea.value = '';
                 setTimeout(() => {
                     if (confirmationDiv.textContent.includes("envoyé")) {
                         confirmationDiv.style.opacity = '0';
@@ -428,7 +426,6 @@
         } finally {
             sendBtn.disabled = false;
             sendBtn.style.opacity = '1';
-            // efface le message "envoi en cours" après 2 sec si pas déjà remplacé
             setTimeout(() => {
                 if (confirmationDiv.textContent === "📡 envoi en cours...") {
                     confirmationDiv.style.opacity = '0';
