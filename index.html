@@ -150,6 +150,7 @@
             padding-top: 16px;
         }
 
+        /* Formulaire avec Formspree */
         .private-message-area {
             background: #fffaf0;
             border-radius: 28px;
@@ -226,20 +227,6 @@
 
         .send-btn:active {
             transform: scale(0.96);
-        }
-
-        .confirmation-toast {
-            background: #2c3e50;
-            color: #ffecb3;
-            padding: 6px 14px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            display: inline-block;
-            margin-top: 8px;
-            opacity: 0;
-            transition: opacity 0.3s;
-            pointer-events: none;
         }
 
         .private-hint {
@@ -332,18 +319,17 @@
             </div>
         </div>
         
-        <!-- Zone de texte personnelle avec bouton Envoyer -->
-        <div class="private-message-area">
+        <!-- FORMULAIRE avec action Formspree -->
+        <form action="https://formspree.io/f/meevkowq" method="POST" class="private-message-area">
             <div class="private-label">
                 <span>💌</span> un petit message entre nous <span>💌</span>
             </div>
-            <textarea class="private-textarea" id="privateNote" rows="3" placeholder="Écris-moi ce que tu veux... un souvenir, un secret, ou juste un mot doux. 💕"></textarea>
+            <textarea name="message" class="private-textarea" id="privateNote" rows="3" placeholder="Écris-moi ce que tu veux... un souvenir, un secret, ou juste un mot doux. 💕"></textarea>
             <div class="send-button">
-                <button class="send-btn" id="sendMessageBtn">📨 Envoyer</button>
+                <button type="submit" class="send-btn">📨 Envoyer</button>
             </div>
-            <div id="sendConfirmation" class="confirmation-toast"></div>
-            <div class="private-hint">📝 ton message est sauvegardé automatiquement</div>
-        </div>
+            <div class="private-hint">📝 ton message sera envoyé directement dans ma boîte aux lettres secrète</div>
+        </form>
         
         <div class="candle" id="wishCandle">
             🕯️ fais un vœu ✨
@@ -374,50 +360,7 @@
         }
     }
     
-    // Sauvegarde automatique du message privé
-    const textarea = document.getElementById('privateNote');
-    if (localStorage.getItem('doaae_private_message')) {
-        textarea.value = localStorage.getItem('doaae_private_message');
-    }
-    textarea.addEventListener('input', function() {
-        localStorage.setItem('doaae_private_message', this.value);
-    });
-    
-    // Bouton Envoyer : vide la zone de texte après envoi
-    const sendBtn = document.getElementById('sendMessageBtn');
-    const confirmationDiv = document.getElementById('sendConfirmation');
-    
-    sendBtn.addEventListener('click', () => {
-        const message = textarea.value.trim();
-        if (message === "") {
-            confirmationDiv.textContent = "💬 écris quelque chose d'abord...";
-            confirmationDiv.style.opacity = '1';
-            setTimeout(() => {
-                confirmationDiv.style.opacity = '0';
-            }, 2000);
-            return;
-        }
-        // Afficher la confirmation
-        confirmationDiv.textContent = "✨ Message envoyé ! Il est dans mon cœur ✨";
-        confirmationDiv.style.opacity = '1';
-        
-        // VIDER le champ de texte et le localStorage
-        textarea.value = '';
-        localStorage.setItem('doaae_private_message', '');
-        
-        // Effacer la confirmation après 2.5 secondes
-        setTimeout(() => {
-            confirmationDiv.style.opacity = '0';
-        }, 2500);
-        
-        // Petit effet sur le bouton
-        sendBtn.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            sendBtn.style.transform = '';
-        }, 150);
-    });
-    
-    // Bougie
+    // Bougie interactive
     const candle = document.getElementById('wishCandle');
     candle.addEventListener('click', () => {
         candle.style.transform = 'scale(0.95)';
