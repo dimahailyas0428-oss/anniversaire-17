@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Bonne fête D 💖doaae</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #fceeb8 0%, #ffccbc 50%, #ffe0b5 100%);
+            font-family: 'Poppins', 'Segoe UI', 'Comic Neue', 'Chalkboard SE', cursive, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .birthday-card {
+            max-width: 680px;
+            width: 100%;
+            background: rgba(255, 250, 235, 0.96);
+            border-radius: 70px 70px 60px 60px;
+            box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2), inset 0 1px 4px rgba(255, 245, 200, 0.9);
+            text-align: center;
+            padding: 35px 25px 45px;
+            transition: transform 0.2s;
+            border: 2px solid #ffd966;
+        }
+
+        .birthday-card:hover {
+            transform: scale(1.01);
+        }
+
+        .name-title {
+            font-size: 3.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #e84393, #ff6b6b, #feca57);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 3px 3px 12px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .birthday-message {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #c44569;
+            background: #fff0e0;
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 60px;
+            margin: 20px 0;
+            box-shadow: 0 8px 0 #ffb347;
+            transform: rotate(-0.5deg);
+        }
+
+        .deco {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0 15px;
+            flex-wrap: wrap;
+        }
+
+        .deco span {
+            font-size: 3rem;
+            filter: drop-shadow(2px 6px 12px rgba(0,0,0,0.2));
+            animation: flottement 3s infinite ease-in-out;
+            display: inline-block;
+        }
+
+        @keyframes flottement {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* zone du message d'amour avec excuses */
+        .love-message {
+            margin-top: 35px;
+            background: #fff5ee;
+            padding: 18px 20px;
+            border-radius: 55px;
+            box-shadow: 0 8px 18px rgba(255, 80, 100, 0.2);
+            border: 1px solid #ffc2c9;
+            transition: 0.2s;
+        }
+
+        .love-message:hover {
+            background: #fff0ea;
+            transform: scale(1.01);
+        }
+
+        .love-line {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #d43f6b;
+            margin: 8px 0;
+            line-height: 1.4;
+        }
+
+        .love-line:first-child {
+            font-size: 1.8rem;
+            color: #ff4d6d;
+        }
+
+        .love-line:last-child {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #c9184a;
+        }
+
+        .age-badge {
+            background: #ffb142;
+            color: #2d1b00;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 40px;
+            padding: 5px 15px;
+            display: inline-block;
+            margin-bottom: 20px;
+            box-shadow: inset 0 -1px 0 #ffdd99, 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        @media (max-width: 550px) {
+            .birthday-card {
+                padding: 25px 15px 35px;
+            }
+            .name-title {
+                font-size: 2.6rem;
+            }
+            .birthday-message {
+                font-size: 1.5rem;
+                padding: 8px 18px;
+            }
+            .love-line {
+                font-size: 1.1rem;
+            }
+            .love-line:first-child {
+                font-size: 1.3rem;
+            }
+            .love-line:last-child {
+                font-size: 1.2rem;
+            }
+            .deco span {
+                font-size: 2.2rem;
+            }
+        }
+
+        .floating-hearts {
+            position: fixed;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            pointer-events: none;
+            font-size: 1rem;
+            text-align: center;
+            color: #ff80ab;
+            opacity: 0.6;
+        }
+
+        footer {
+            font-size: 0.7rem;
+            margin-top: 25px;
+            color: #aa6f5e;
+        }
+    </style>
+</head>
+<body>
+
+<div class="birthday-card">
+    <div class="name-title">🎈 Duaa 🎈</div>
+    <div class="age-badge">✨ 17 ans ✨</div>
+    <div class="birthday-message">
+        🎂 Joyeux 17ème Anniversaire ! 🎂
+    </div>
+    <div class="deco">
+        <span>🎉</span><span>🎂</span><span>🎈</span><span>🎁</span><span>🌸</span><span>✨</span>
+    </div>
+
+    <!-- Message I love you + excuses (personnalisé) -->
+    <div class="love-message">
+        <div class="love-line">💖 I love you, 💖</div>
+        <div class="love-line">and I’m sorry for anything I may have done that hurt you.</div>
+        <div class="love-line">💕 I love you so much. 💕</div>
+    </div>
+
+    <footer>
+        🌟 que cette journée te rende aussi heureuse que tu mérites 🌟
+    </footer>
+</div>
+
+<div class="floating-hearts">
+    ❤️ 💕 💗 💓 💖
+</div>
+
+</body>
+</html>
