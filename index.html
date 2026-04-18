@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Happy 17th Birthday, Doaae ✨</title>
+    <title>Joyeux 17e anniversaire Doaae ✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
     <style>
         * {
@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* animated background particles (soft floating hearts) */
         .floating-heart {
             position: fixed;
             font-size: 1.4rem;
@@ -36,21 +35,14 @@
         }
 
         @keyframes floatHeart {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 0.6; }
             90% { opacity: 0.6; }
-            100% {
-                transform: translateY(-20vh) rotate(25deg);
-                opacity: 0;
-            }
+            100% { transform: translateY(-20vh) rotate(25deg); opacity: 0; }
         }
 
-        /* main card */
         .card {
-            max-width: 700px;
+            max-width: 720px;
             width: 100%;
             background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(2px);
@@ -66,19 +58,16 @@
             transform: scale(1.01);
         }
 
-        /* decorative top bar */
         .top-bar {
             height: 12px;
             background: linear-gradient(90deg, #f5a3b7, #fbc8b5, #ffe0b5, #f5a3b7);
         }
 
-        /* content */
         .content {
-            padding: 40px 32px 48px;
+            padding: 32px 32px 48px;
             text-align: center;
         }
 
-        /* name with elegant styling */
         .name {
             font-family: 'Playfair Display', serif;
             font-size: 4rem;
@@ -89,7 +78,6 @@
             color: transparent;
             margin-bottom: 12px;
             letter-spacing: -0.5px;
-            text-shadow: 2px 2px 20px rgba(0,0,0,0.05);
         }
 
         .age {
@@ -100,18 +88,14 @@
             font-size: 0.9rem;
             padding: 6px 18px;
             border-radius: 40px;
-            letter-spacing: 0.5px;
             margin-bottom: 28px;
-            box-shadow: inset 0 1px 2px rgba(0,0,0,0.02), 0 2px 5px rgba(0,0,0,0.05);
         }
 
-        /* main birthday greeting */
         .greeting {
             font-size: 2rem;
             font-weight: 700;
             color: #2c3e50;
             margin-bottom: 24px;
-            line-height: 1.3;
         }
 
         .greeting span {
@@ -120,7 +104,6 @@
             border-radius: 20px;
         }
 
-        /* divider with stars */
         .divider {
             margin: 28px 0;
             display: flex;
@@ -131,15 +114,13 @@
             opacity: 0.7;
         }
 
-        /* love message box (elegant) */
         .love-box {
             background: #fffaf5;
             border-radius: 32px;
             padding: 28px 24px;
             margin: 20px 0 24px;
             border: 1px solid rgba(244, 162, 97, 0.3);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
-            transition: all 0.2s;
+            animation: gentlePulse 3s infinite ease-in-out;
         }
 
         .love-message {
@@ -169,7 +150,106 @@
             padding-top: 16px;
         }
 
-        /* button / interactive element */
+        .private-message-area {
+            background: #fffaf0;
+            border-radius: 28px;
+            padding: 18px 20px;
+            margin: 20px 0 20px;
+            border: 1px solid #ffddb0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            text-align: left;
+        }
+
+        .private-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #c47a5a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .private-label span {
+            font-size: 1.1rem;
+        }
+
+        .private-textarea {
+            width: 100%;
+            border: 1px solid #ffe0c0;
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 14px 18px;
+            font-family: 'Inter', monospace;
+            font-size: 0.95rem;
+            color: #4a2c1a;
+            resize: vertical;
+            outline: none;
+            transition: 0.2s;
+            line-height: 1.5;
+        }
+
+        .private-textarea:focus {
+            border-color: #f4a261;
+            box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.2);
+        }
+
+        .send-button {
+            margin-top: 14px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .send-btn {
+            background: #f4a261;
+            border: none;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: white;
+            cursor: pointer;
+            transition: 0.2s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .send-btn:hover {
+            background: #e76f51;
+            transform: scale(1.02);
+        }
+
+        .send-btn:active {
+            transform: scale(0.96);
+        }
+
+        .confirmation-toast {
+            background: #2c3e50;
+            color: #ffecb3;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+
+        .private-hint {
+            font-size: 0.7rem;
+            color: #b98f72;
+            margin-top: 8px;
+            text-align: right;
+            font-style: italic;
+        }
+
         .candle {
             margin: 25px 0 10px;
             font-size: 2.2rem;
@@ -182,20 +262,17 @@
             transform: scale(0.9);
         }
 
-        /* subtle footer */
         .footer-note {
             font-size: 0.8rem;
             color: #b98f72;
-            margin-top: 32px;
-            letter-spacing: 0.3px;
+            margin-top: 20px;
             border-top: 1px solid #ffe0cc;
             padding-top: 24px;
         }
 
-        /* responsive */
         @media (max-width: 550px) {
             .content {
-                padding: 32px 20px 40px;
+                padding: 24px 20px 40px;
             }
             .name {
                 font-size: 2.8rem;
@@ -212,39 +289,37 @@
             .sorry-line {
                 font-size: 0.95rem;
             }
+            .private-textarea {
+                font-size: 0.85rem;
+            }
         }
 
-        /* micro animation for the love box */
         @keyframes gentlePulse {
             0% { box-shadow: 0 8px 20px rgba(0,0,0,0.02); }
             50% { box-shadow: 0 8px 25px rgba(244, 162, 97, 0.15); }
             100% { box-shadow: 0 8px 20px rgba(0,0,0,0.02); }
         }
-        .love-box {
-            animation: gentlePulse 3s infinite ease-in-out;
-        }
     </style>
 </head>
 <body>
 
-<!-- floating hearts generated by JS -->
 <div id="heartContainer"></div>
 
 <div class="card">
     <div class="top-bar"></div>
     <div class="content">
+        
         <div class="name">Doaae</div>
-        <div class="age">✨ 17 years of magic ✨</div>
+        <div class="age">✨ 17 ans de magie ✨</div>
         
         <div class="greeting">
-            <span>🎂 Happy 17th Birthday 🎂</span>
+            <span>🎂 Joyeux 17ème Anniversaire 🎂</span>
         </div>
         
         <div class="divider">
             <span>✧</span> <span>✦</span> <span>✧</span>
         </div>
         
-        <!-- main emotional message -->
         <div class="love-box">
             <div class="love-message">
                 <div class="big-love">💖 I love you 💖</div>
@@ -253,23 +328,35 @@
                 <div class="big-love" style="margin-top: 12px;">💕 I love you so much 💕</div>
             </div>
             <div class="sorry-line">
-                — from the bottom of my heart, today and always —
+                — du fond du cœur, aujourd’hui et pour toujours —
             </div>
         </div>
         
-        <!-- interactive candle (just for fun) -->
+        <!-- Zone de texte personnelle avec bouton Envoyer -->
+        <div class="private-message-area">
+            <div class="private-label">
+                <span>💌</span> un petit message entre nous <span>💌</span>
+            </div>
+            <textarea class="private-textarea" id="privateNote" rows="3" placeholder="Écris-moi ce que tu veux... un souvenir, un secret, ou juste un mot doux. 💕"></textarea>
+            <div class="send-button">
+                <button class="send-btn" id="sendMessageBtn">📨 Envoyer</button>
+            </div>
+            <div id="sendConfirmation" class="confirmation-toast"></div>
+            <div class="private-hint">📝 ton message est sauvegardé automatiquement</div>
+        </div>
+        
         <div class="candle" id="wishCandle">
-            🕯️ make a wish ✨
+            🕯️ fais un vœu ✨
         </div>
         
         <div class="footer-note">
-            🌟 may your 17th year be filled with light, laughter, and love 🌟
+            🌟 que ta 17e année soit pleine de lumière, de rires et d’amour 🌟
         </div>
     </div>
 </div>
 
 <script>
-    // create floating hearts in background (professional touch)
+    // Floating hearts
     function createFloatingHearts() {
         const container = document.getElementById('heartContainer');
         const hearts = ['❤️', '💖', '💕', '💗', '💓', '🌸', '✨'];
@@ -287,15 +374,53 @@
         }
     }
     
-    // candle click effect: show a small alert but gentle
+    // Sauvegarde automatique du message privé
+    const textarea = document.getElementById('privateNote');
+    if (localStorage.getItem('doaae_private_message')) {
+        textarea.value = localStorage.getItem('doaae_private_message');
+    }
+    textarea.addEventListener('input', function() {
+        localStorage.setItem('doaae_private_message', this.value);
+    });
+    
+    // Bouton Envoyer
+    const sendBtn = document.getElementById('sendMessageBtn');
+    const confirmationDiv = document.getElementById('sendConfirmation');
+    
+    sendBtn.addEventListener('click', () => {
+        const message = textarea.value.trim();
+        if (message === "") {
+            confirmationDiv.textContent = "💬 écris quelque chose d'abord...";
+            confirmationDiv.style.opacity = '1';
+            setTimeout(() => {
+                confirmationDiv.style.opacity = '0';
+            }, 2000);
+            return;
+        }
+        // Simuler l'envoi avec une jolie animation
+        confirmationDiv.textContent = "✨ Message envoyé ! Il est dans mon cœur ✨";
+        confirmationDiv.style.opacity = '1';
+        // Optionnel : on peut aussi jouer un petit effet sonore ? non, reste doux.
+        setTimeout(() => {
+            confirmationDiv.style.opacity = '0';
+        }, 2500);
+        
+        // Pour le fun, on peut ajouter un petit effet sur le bouton
+        sendBtn.style.transform = 'scale(0.95)';
+        setTimeout(() => {
+            sendBtn.style.transform = '';
+        }, 150);
+    });
+    
+    // Bougie
     const candle = document.getElementById('wishCandle');
     candle.addEventListener('click', () => {
         candle.style.transform = 'scale(0.95)';
-        candle.innerHTML = '🕯️✨ wish sent to the stars ✨🕯️';
+        candle.innerHTML = '🕯️✨ vœu envoyé aux étoiles ✨🕯️';
         setTimeout(() => {
             candle.style.transform = '';
             setTimeout(() => {
-                candle.innerHTML = '🕯️ make a wish ✨';
+                candle.innerHTML = '🕯️ fais un vœu ✨';
             }, 2000);
         }, 300);
     });
