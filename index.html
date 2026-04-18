@@ -383,7 +383,7 @@
         localStorage.setItem('doaae_private_message', this.value);
     });
     
-    // Bouton Envoyer
+    // Bouton Envoyer : vide la zone de texte après envoi
     const sendBtn = document.getElementById('sendMessageBtn');
     const confirmationDiv = document.getElementById('sendConfirmation');
     
@@ -397,15 +397,20 @@
             }, 2000);
             return;
         }
-        // Simuler l'envoi avec une jolie animation
+        // Afficher la confirmation
         confirmationDiv.textContent = "✨ Message envoyé ! Il est dans mon cœur ✨";
         confirmationDiv.style.opacity = '1';
-        // Optionnel : on peut aussi jouer un petit effet sonore ? non, reste doux.
+        
+        // VIDER le champ de texte et le localStorage
+        textarea.value = '';
+        localStorage.setItem('doaae_private_message', '');
+        
+        // Effacer la confirmation après 2.5 secondes
         setTimeout(() => {
             confirmationDiv.style.opacity = '0';
         }, 2500);
         
-        // Pour le fun, on peut ajouter un petit effet sur le bouton
+        // Petit effet sur le bouton
         sendBtn.style.transform = 'scale(0.95)';
         setTimeout(() => {
             sendBtn.style.transform = '';
